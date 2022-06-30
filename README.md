@@ -6,7 +6,7 @@ Uses novnc, fluxbox, and supervisor (to keep everything running).
 
 ## Run it
 ```bash
-docker --rm -ti -p 6900:6900 mmeyer2k/docker-fluxbox-novnc
+docker run --rm -ti -p 6900:6900 mmeyer2k/docker-fluxbox-novnc
 ```
 
 ## View it
@@ -19,4 +19,14 @@ docker --rm -ti -e VNC_RESOLUTION=1024x768 -p 6900:6900 mmeyer2k/docker-fluxbox-
 ```
 
 ## Extend it
+Add/remove supervisor configurations to control how applications start and persist.
+Config files are stored in `/etc/supervisor/conf.d`.
 
+An example supervisor config to keep firefox running:
+```ini
+[program:xterm]
+command=xterm
+autorestart=true
+```
+
+By default, xterm stays on the desktop. To stop this behavior in your image/container, delete `/etc/supervisor/conf.d/xterm.conf`
