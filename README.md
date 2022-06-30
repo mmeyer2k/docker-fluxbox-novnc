@@ -6,7 +6,7 @@ Uses novnc, fluxbox, and supervisor (to keep everything running).
 
 ## Run it
 ```bash
-docker run --rm -ti -p 6900:6900 mmeyer2k/docker-fluxbox-novnc
+docker run --rm -p 6900:6900 mmeyer2k/docker-fluxbox-novnc
 ```
 
 ## View it
@@ -15,7 +15,7 @@ Access the container on port `5900` with a VNC viewer.
 ## Configure it
 Currently, only the `VNC_RESOLUTION` environment variable is supported.
 ```bash
-docker run --rm -ti -e VNC_RESOLUTION=1024x768 -p 6900:6900 mmeyer2k/docker-fluxbox-novnc
+docker run --rm -e VNC_RESOLUTION=1024x768 -p 6900:6900 mmeyer2k/docker-fluxbox-novnc
 ```
 
 ## Extend it
